@@ -41,7 +41,7 @@ namespace Datastructures
                 i++;
                 n = n.next;
             }
-            Console.WriteLine("Die Anzahl beträgt" + i + ";");
+            Console.WriteLine("Die Anzahl beträgt " + i + ";");
             return i;
         }
 
