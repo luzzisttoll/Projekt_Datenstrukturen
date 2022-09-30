@@ -7,7 +7,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Datastructures", "Datastruc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack_exercise", "Stack_exercise\Stack_exercise.csproj", "{50CBC811-411B-418E-BD6F-2568F3B9FD7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestProject", "TestProject\TestProject.csproj", "{AB06F9C4-F4B2-45A1-8E56-9000B954F7C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{AB06F9C4-F4B2-45A1-8E56-9000B954F7C3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{2B4E16E0-F3DD-4507-B6F5-BF124D9DE643} = {2B4E16E0-F3DD-4507-B6F5-BF124D9DE643}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

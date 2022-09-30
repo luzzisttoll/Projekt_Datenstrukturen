@@ -6,11 +6,14 @@ using System.Threading.Tasks;
 
 namespace Datastructures
 {
-    internal class Node
+    public class Node
     {
-        int data;
-        Node next;
+        public int data;
+        public Node next;
         // Constructor to create a new node
-        Node(int d) { data = d; }
+        public Node(int d) { 
+            data = d;
+            next = null;
+        }
     }
 }
