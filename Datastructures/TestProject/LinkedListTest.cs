@@ -15,10 +15,10 @@ namespace TestProject
         public void TestSLLCound_AddItems_ReturnCorrectCount()
         {
             var myLL = new SingleLinkedList();
-            myLL.insert(1);
-            myLL.insert(1);
-            myLL.insert(1);
-            myLL.insert(1);
+            myLL.push(1);
+            myLL.push(1);
+            myLL.push(1);
+            myLL.push(1);
             Assert.AreEqual(4, myLL.count());
         }
     }

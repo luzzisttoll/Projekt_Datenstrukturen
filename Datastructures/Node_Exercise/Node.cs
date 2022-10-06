@@ -11,7 +11,8 @@ namespace Datastructures
         public int data;
         public Node next;
         // Constructor to create a new node
-        public Node(int d) { 
+        public Node(int d)
+        {
             data = d;
             next = null;
         }

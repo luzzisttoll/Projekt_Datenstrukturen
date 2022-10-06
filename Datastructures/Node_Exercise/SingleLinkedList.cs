@@ -9,9 +9,9 @@ namespace Datastructures
     public class SingleLinkedList
     {
         public Node head;
-       
 
-        public void insert (int newElement)
+
+        public void insert(int newElement)
         {
             Node newNode = new Node(0);
             newNode.data = newElement;
@@ -37,7 +37,8 @@ namespace Datastructures
         {
             Node n = head;
             int i = 0;
-            while (n != null) {
+            while (n != null)
+            {
                 i++;
                 n = n.next;
             }
