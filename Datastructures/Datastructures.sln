@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack_exercise", "Stack_exercise\Stack_exercise.csproj", "{50CBC811-411B-418E-BD6F-2568F3B9FD7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TestProject", "TestProject\TestProject.csproj", "{AB06F9C4-F4B2-45A1-8E56-9000B954F7C3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListTests", "SingleLinkedListTests\SingleLinkedList.csproj", "{AB06F9C4-F4B2-45A1-8E56-9000B954F7C3}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Node_Exercise", "Node_Exercise\Node_Exercise.csproj", "{A8CAB6D8-EA05-4FEE-9AB4-FE4FE8B4A4F5}"
 EndProject

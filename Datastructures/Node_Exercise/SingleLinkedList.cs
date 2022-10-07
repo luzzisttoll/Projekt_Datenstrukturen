@@ -9,7 +9,7 @@ namespace Datastructures
     public class SingleLinkedList
     {
         public Node head;
-
+        int _counter;
 
         public void insert(int newElement)
         {
@@ -31,6 +31,7 @@ namespace Datastructures
 
                 n.next = newNode;
             }
+            _counter++;
         }
 
         public int count()
