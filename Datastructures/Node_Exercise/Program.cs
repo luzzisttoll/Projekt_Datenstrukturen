@@ -15,8 +15,13 @@ namespace GenerischeKlassen
             mySLL.head.next = second;
             second.next = third;
 
-            mySLL.insert(5);
-            mySLL.count();
+            mySLL.insert(4);
+            //mySLL.count();
+            //mySLL.insert_First(2);
+            //mySLL.insert_After(9, 3);
+            mySLL.printList();
+            //mySLL.getNode(2);
+            mySLL.DeleteNode(new Node(1));
             mySLL.printList();
         }
     }

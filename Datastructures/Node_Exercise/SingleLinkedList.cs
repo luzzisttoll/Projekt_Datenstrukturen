@@ -31,7 +31,7 @@ namespace Datastructures
 
                 n.next = newNode;
             }
-            _counter++;
+            _counter++; // anderst gemacht, weil bereits inhalte in node sind, sonst so machen
         }
 
         public int count()
@@ -53,6 +53,108 @@ namespace Datastructures
             while (n != null)
             {
                 Console.WriteLine(n.data + ", ");
+                n = n.next;
+            }
+        }
+
+        public void insert_First(int newElement)
+        {
+            Node newNode = new Node(0);
+            newNode.data = newElement;
+            newNode.next = head;
+            head = newNode;
+        }
+
+        public void insert_After(int newElement, int position)
+        {
+            Node newNode = new Node(0);
+            newNode.data = newElement;
+            newNode.next = null;
+
+            if (position < 1)
+            {
+                Console.Write("\nposition should be >= 1.");
+            }
+            else if (position == 1)
+            {
+                newNode.next = head;
+                head = newNode;
+            }
+            else
+            {
+
+                Node n = head;
+                for (int i = 1; i < position - 1; i++)
+                {
+                    if (n != null)
+                    {
+                        n = n.next;
+                    }
+                }
+
+                if (n != null)
+                {
+                    newNode.next = n.next;
+                    n.next = newNode;
+                }
+                else
+                {
+                    Console.Write("\nThe previous node is null.");
+                }
+            }
+        }
+
+        public void getNode (int argData)
+        {
+            Node n = head;
+            int value = 0;
+            if (n != null)
+            {
+                while (n != null) 
+                { 
+                    if (n.data == argData)
+                    {
+                        value++;
+                        break;
+                    }
+                    n = n.next;
+                }
+                if (value == 1)
+                {
+                    Console.WriteLine(argData);
+                }
+                else
+                {
+                    Console.WriteLine(argData + " is not found in the list.");
+                }
+            }
+            else
+            {
+                Console.Write("Node is empty");
+            }
+        }
+
+        public void DeleteNode(Node argNode)
+        {
+            if (head == null)
+            {
+                return;
+            }
+
+            if (head.data == argNode.data)
+            {
+                head = head.next;
+                return;
+            }
+
+            Node n = head;
+            while (n.next != null)
+            {
+                if (n.next.data == argNode.data)
+                {
+                    n.next = n.next.next;
+                    break;
+                }
                 n = n.next;
             }
         }
