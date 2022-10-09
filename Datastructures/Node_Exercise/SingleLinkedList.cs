@@ -11,7 +11,7 @@ namespace Datastructures
         public Node head;
         int _counter;
 
-        public void insert(int newElement)
+        public void insertLast(int newElement)
         {
             Node newNode = new Node(0);
             newNode.data = newElement;
@@ -102,6 +102,11 @@ namespace Datastructures
                     Console.Write("\nThe previous node is null.");
                 }
             }
+        }
+
+        public Node GetHead()
+        {
+            return head;
         }
 
         public void getNode (int argData)

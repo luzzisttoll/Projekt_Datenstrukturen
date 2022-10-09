@@ -15,7 +15,7 @@ namespace GenerischeKlassen
             mySLL.head.next = second;
             second.next = third;
 
-            mySLL.insert(4);
+            mySLL.insertLast(4);
             //mySLL.count();
             //mySLL.insert_First(2);
             //mySLL.insert_After(9, 3);

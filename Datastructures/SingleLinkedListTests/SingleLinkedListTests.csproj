@@ -15,8 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Datastructures\Datastructures.csproj" />
-    <ProjectReference Include="..\Node_Exercise\Node_Exercise.csproj" />
+    <ProjectReference Include="..\Node_Exercise\SingleLinkedList.csproj" />
   </ItemGroup>
 
 </Project>

@@ -5,9 +5,9 @@ VisualStudioVersion = 17.1.32210.238
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Stack_exercise", "Stack_exercise\Stack_exercise.csproj", "{50CBC811-411B-418E-BD6F-2568F3B9FD7C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Node_Exercise", "Node_Exercise\Node_Exercise.csproj", "{A8CAB6D8-EA05-4FEE-9AB4-FE4FE8B4A4F5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedList", "Node_Exercise\SingleLinkedList.csproj", "{A8CAB6D8-EA05-4FEE-9AB4-FE4FE8B4A4F5}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedList", "SingleLinkedListTests\SingleLinkedList.csproj", "{6C791BA9-CA42-42B3-BB82-26679D5878B2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SingleLinkedListTests", "SingleLinkedListTests\SingleLinkedListTests.csproj", "{6C791BA9-CA42-42B3-BB82-26679D5878B2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
