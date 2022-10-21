@@ -22,14 +22,25 @@ namespace TestProject
             Assert.AreEqual(4, myLL.count());
         }
 
-        public void SingleLinkedListTest()
+        [Test]
+        public void SingleLinkedListTest_DeleteItem_ReturnCorrectCount()
         {
-            Datastructures.SingleLinkedList linkedList = new Datastructures.SingleLinkedList();
+            var linkedList = new SingleLinkedList();
             linkedList.insertLast(0);
             linkedList.insert_After(1, 0);
             Assert.AreEqual(linkedList.count(), 2);
             linkedList.DeleteNode(0);
             Assert.AreEqual(linkedList.count(), 1);
+        }
+
+        [Test]
+        public void SSLTest_GetNode_ReturnsElement()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.GetNode(0);
+            linkedList.insertLast(1);
+            linkedList.insertLast(2);
+            linkedList.insertLast(3);
         }
     }
 }

@@ -15,9 +15,9 @@ namespace GenerischeKlassen
             linkedList.insert_After(9, 2);
             linkedList.insert_First(7);
             linkedList.DeleteNode(3);
-
-            linkedList.printList();
-            Console.WriteLine(linkedList.GetNode(4));
+            linkedList.GetNode(4);
+            //linkedList.printList();
+            //Console.WriteLine(linkedList.GetNode(4));
         }
     }
 }

@@ -60,12 +60,21 @@ namespace Datastructures
             head = newNode;
         }
 
-        public void insert_After(int argNewNode, int argPreviousNode)
+        public void InsertAfter(Node insertafter, int new_data)
         {
-
+            if (insertafter == null)
+            {
+                Console.WriteLine("Diese Node existiert nicht");
+                return;
+            }
+            Node new_node = new Node(new_data, null);
+            new_node.next = insertafter.next;
+            insertafter.next = new_node;
+            return;
         }
 
-       public Node GetNode(int argData)
+
+        public Node GetNode(int argData)
         {
             {
                 Node temp = new Node(0, null);
