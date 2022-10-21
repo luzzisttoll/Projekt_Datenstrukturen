@@ -59,5 +59,41 @@ namespace TestProject
             Assert.AreEqual(5, node1);
 
         }
+
+        [Test]
+        public void SSLTestSwitchNodes_SwitchMiddleNodes_ReturnCorrectOrder()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(2);
+            linkedList.insertLast(3);
+            linkedList.insertLast(4);
+            linkedList.insertLast(5);
+
+            var node1 = linkedList.GetNode(2).data;
+            var node2 = linkedList.GetNode(4).data;
+            linkedList.SwitchNode(node1, node2);
+
+            Assert.AreEqual(linkedList.ToString(), "| 1 | 4 | 3 | 2 | 5 |");
+        }
+
+        [Test]
+        public void SSLTestSwitchNodes_SwitchFirstNodeWithLast_ReturnCorrectOrder()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(2);
+            linkedList.insertLast(3);
+            linkedList.insertLast(4);
+            linkedList.insertLast(5);
+
+            var node1 = linkedList.GetNode(1).data;
+            var node2 = linkedList.GetNode(5).data;
+            linkedList.SwitchNode(node1, node2);
+            
+            Assert.AreEqual(linkedList.ToString(), "| 5 | 2 | 3 | 4 | 1 |");
+        }
+
+
     }
 }

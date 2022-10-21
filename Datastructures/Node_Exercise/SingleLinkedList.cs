@@ -115,7 +115,6 @@ namespace Datastructures
 
         public void SwitchNode(int firstNode, int secondNode)
         {
-
             // wenn gleich, dann passiert nichts
             if (firstNode == secondNode)
                 return;
@@ -199,6 +198,21 @@ namespace Datastructures
            head1.data = head2.data;
            head2.data = val;
            return head1;
+        }
+        public override string ToString()
+        {
+            string retval = "";
+            if (head == null)
+                return "No elements in List";
+
+            var node = head;
+            while (node != null)
+            {
+                retval += "| " + node.data + " ";
+                node = node.next;
+            }
+            retval += "|";
+            return retval;
         }
     }
 }
