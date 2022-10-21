@@ -11,10 +11,10 @@ namespace Datastructures
         public int data;
         public Node next;
         // Constructor to create a new node
-        public Node(int d)
+        public Node(int d, Node _next)
         {
             data = d;
-            next = null;
+            next = _next;
         }
     }
 }

@@ -15,20 +15,21 @@ namespace TestProject
         public void TestSLLCount_AddItems_ReturnCorrectCount()
         {
             var myLL = new SingleLinkedList();
-            myLL.insert(1);
-            myLL.insert(1);
-            myLL.insert(1);
-            myLL.insert(1);
+            myLL.insertLast(1);
+            myLL.insertLast(1);
+            myLL.insertLast(1);
+            myLL.insertLast(1);
             Assert.AreEqual(4, myLL.count());
         }
 
-        public void TestSSL_AddItemsToStart_ReturnCorrectCount()
+        public void SingleLinkedListTest()
         {
-            var myLL = new SingleLinkedList();
-            myLL.insert(5);
-            myLL.insert(1);
-            myLL.insert_First(2);
-            Assert.AreEqual(3, myLL.count());
+            Datastructures.SingleLinkedList linkedList = new Datastructures.SingleLinkedList();
+            linkedList.insertLast(0);
+            linkedList.insert_After(1, 0);
+            Assert.AreEqual(linkedList.count(), 2);
+            linkedList.DeleteNode(0);
+            Assert.AreEqual(linkedList.count(), 1);
         }
     }
 }
