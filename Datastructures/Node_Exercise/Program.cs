@@ -6,18 +6,18 @@ namespace GenerischeKlassen
     {
         public static void Main(String[] args)
         {
-            SingleLinkedList mySLL = new SingleLinkedList();
-
-            mySLL.head = new Node(1);
-            Node second = new Node(2);
-            Node third = new Node(3);
-
-            mySLL.head.next = second;
-            second.next = third;
-
-            mySLL.insert(5);
-            mySLL.count();
-            mySLL.printList();
+            Datastructures.SingleLinkedList linkedList = new Datastructures.SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(2);
+            linkedList.insertLast(3);
+            linkedList.insertLast(4);
+            linkedList.insertLast(5);
+            linkedList.insert_After(9, 2);
+            linkedList.insert_First(7);
+            linkedList.DeleteNode(3);
+            linkedList.GetNode(4);
+            //linkedList.printList();
+            //Console.WriteLine(linkedList.GetNode(4));
         }
     }
 }

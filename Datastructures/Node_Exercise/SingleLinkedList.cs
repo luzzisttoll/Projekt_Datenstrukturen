@@ -11,27 +11,22 @@ namespace Datastructures
         public Node head;
         int _counter;
 
-        public void insert(int newElement)
+        public void insertLast(int newElement)
         {
-            Node newNode = new Node(0);
-            newNode.data = newElement;
-            newNode.next = null;
-
+            Node node = new Node(newElement, null);
             if (head == null)
             {
-                head = newNode;
+                head = node;
             }
             else
             {
-                Node n = head;
-                while (n.next != null)
+                Node currentNode = head;
+                while (currentNode.next != null)
                 {
-                    n = n.next;
+                    currentNode = currentNode.next;
                 }
-
-                n.next = newNode;
+                currentNode.next = node;
             }
-            _counter++;
         }
 
         public int count()
@@ -55,6 +50,67 @@ namespace Datastructures
                 Console.WriteLine(n.data + ", ");
                 n = n.next;
             }
+        }
+
+        public void insert_First(int newElement)
+        {
+            Node newNode = new Node(newElement, null);
+            newNode.data = newElement;
+            newNode.next = head;
+            head = newNode;
+        }
+
+        public void InsertAfter(Node insertafter, int new_data)
+        {
+            if (insertafter == null)
+            {
+                Console.WriteLine("Diese Node existiert nicht");
+                return;
+            }
+            Node new_node = new Node(new_data, null);
+            new_node.next = insertafter.next;
+            insertafter.next = new_node;
+            return;
+        }
+
+
+        public Node GetNode(int argData)
+        {
+            {
+                Node temp = new Node(0, null);
+                temp = this.head;
+
+                if (temp != null)
+                {
+
+                    while (temp != null)
+                    {
+                        if (temp.data == argData)
+                        {
+                            return temp;
+                        }
+                        temp = temp.next;
+                    }
+                }
+                return null;
+            }
+        }
+
+        public bool DeleteNode(int argNode)
+        {
+            Node currentNode = head;
+            Node previousNode = head;
+            while (currentNode!.Equals(argNode))
+            {
+                if (currentNode.next == null)
+                {
+                    return false;
+                }
+                previousNode = currentNode;
+                currentNode = currentNode.next;
+            }
+            previousNode.next = currentNode.next;
+            return true;
         }
     }
 }
