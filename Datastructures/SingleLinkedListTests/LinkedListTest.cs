@@ -1,11 +1,13 @@
 ﻿using Datastructures;
 using NUnit.Framework;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 
 namespace TestProject
 {
     public class LinkedListTest
     {
+        public Node head;
         [SetUp]
         public void Setup()
         {
@@ -27,7 +29,7 @@ namespace TestProject
         {
             var linkedList = new SingleLinkedList();
             linkedList.insertLast(0);
-            linkedList.insert_After(1, 0);
+            //linkedList.InsertAfter(3, 0);
             Assert.AreEqual(linkedList.count(), 2);
             linkedList.DeleteNode(0);
             Assert.AreEqual(linkedList.count(), 1);
@@ -37,10 +39,25 @@ namespace TestProject
         public void SSLTest_GetNode_ReturnsElement()
         {
             var linkedList = new SingleLinkedList();
-            linkedList.GetNode(0);
-            linkedList.insertLast(1);
+            var getnode = linkedList.GetNode(1);
             linkedList.insertLast(2);
+            linkedList.insertLast(1);
             linkedList.insertLast(3);
+            Assert.AreEqual(head.next, getnode);
+        }
+
+        [Test]
+        public void SSLTest_SwitchNodes_ReturnCorrectOrder()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(1);
+            linkedList.insertLast(5);
+            var node1 = linkedList.GetNode(1).data;
+            var node2 = linkedList.GetNode(5).data;
+            linkedList.SwitchNode(node1, node2);
+            Assert.AreEqual(5, node1);
+
         }
     }
 }

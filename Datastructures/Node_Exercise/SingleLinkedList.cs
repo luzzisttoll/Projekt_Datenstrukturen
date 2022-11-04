@@ -112,5 +112,93 @@ namespace Datastructures
             previousNode.next = currentNode.next;
             return true;
         }
+
+        public void SwitchNode(int firstNode, int secondNode)
+        {
+
+            // wenn gleich, dann passiert nichts
+            if (firstNode == secondNode)
+                return;
+
+            //erste Node finden
+            Node previousFirstNode = null;
+            Node currentFirstNode = head;
+            while (currentFirstNode != null && currentFirstNode.data != firstNode)
+            {
+                previousFirstNode = currentFirstNode;
+                currentFirstNode = currentFirstNode.next;
+            }
+
+            //zweite Node finden
+            Node previousSecondNode = null;
+            Node currentSecondNode = head;
+            while (currentSecondNode != null && currentSecondNode.data != secondNode)
+            {
+                previousSecondNode = currentSecondNode;
+                currentSecondNode = currentSecondNode.next;
+            }
+
+            //wenn erste Node nicht head ist
+            if (previousFirstNode != null)
+            {
+                previousFirstNode.next = currentSecondNode;
+            }
+            else
+            {
+                head = currentSecondNode;
+            }
+
+            //wenn zweite Node nicht head ist
+            if (previousSecondNode != null)
+            {
+                previousSecondNode.next = currentFirstNode;
+            }
+            else
+            {
+                head = currentFirstNode;
+            }
+
+            Node temp = currentFirstNode.next;
+            currentFirstNode.next = currentSecondNode.next;
+            currentSecondNode.next = temp;
+
+        }
+
+        public Node SwitchNode2(Node firstNode, Node secondNode) //test
+        {
+           if (firstNode == null)
+           {
+                return null;
+           }
+           if (secondNode == null)
+           {
+                return null;
+           }
+
+           if (firstNode == secondNode)
+           {
+                return null;
+           }
+
+           int firstNodeData = firstNode.data;
+           int secondNodeData = secondNode.data;
+           Node head1 = this.head;
+           Node head2 = this.head;
+
+           while (head1.data != firstNodeData) 
+           {
+               head1 = head1.next;
+           }
+
+           while (head2.data != secondNodeData) 
+           {
+               head2 = head2.next;
+           }
+
+           int val = head1.data;
+           head1.data = head2.data;
+           head2.data = val;
+           return head1;
+        }
     }
 }
