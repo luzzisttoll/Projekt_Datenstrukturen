@@ -36,14 +36,16 @@ namespace TestProject
         }
 
         [Test]
-        public void SSLTest_GetNode_ReturnsElement()
+        public void SSLTest_NodeExists_ReturnsNode()
         {
             var linkedList = new SingleLinkedList();
             var getnode = linkedList.GetNode(1);
-            linkedList.insertLast(2);
+            Assert.AreEqual(getnode, null);
             linkedList.insertLast(1);
+            linkedList.insertLast(2);
             linkedList.insertLast(3);
-            Assert.AreEqual(head.next, getnode);
+            getnode = linkedList.GetNode(1);
+            Assert.AreNotEqual(getnode, null);
         }
 
         [Test]

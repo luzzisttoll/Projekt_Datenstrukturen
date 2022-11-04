@@ -9,6 +9,8 @@ namespace Datastructures
     public class SingleLinkedList
     {
         public Node head;
+        public Node tail;
+        public Node sorted;
         int _counter;
 
         public void insertLast(int newElement)
@@ -73,30 +75,26 @@ namespace Datastructures
             return;
         }
 
-
         public Node GetNode(int argData)
         {
+            var temp = this.head;
+
+            if (temp != null)
             {
-                Node temp = new Node(0, null);
-                temp = this.head;
-
-                if (temp != null)
+                while (temp != null)
                 {
-
-                    while (temp != null)
+                    if (temp.data == argData)
                     {
-                        if (temp.data == argData)
-                        {
-                            return temp;
-                        }
-                        temp = temp.next;
+                        return temp;
                     }
+                    temp = temp.next;
                 }
-                return null;
             }
+            return null;
+            
         }
 
-        public bool DeleteNode(int argNode)
+        public bool DeleteNode(int argNode) 
         {
             Node currentNode = head;
             Node previousNode = head;
@@ -113,9 +111,8 @@ namespace Datastructures
             return true;
         }
 
-        public void SwitchNode(int firstNode, int secondNode)
+        public void SwitchNode(int firstNode, int secondNode) // switch values
         {
-
             // wenn gleich, dann passiert nichts
             if (firstNode == secondNode)
                 return;
@@ -164,8 +161,11 @@ namespace Datastructures
 
         }
 
-        public Node SwitchNode2(Node firstNode, Node secondNode) //test
+        public Node SwitchNode2(Node firstNode, Node secondNode) //switch nodes
         {
+           int firstNodeData = firstNode.data;
+           int secondNodeData = secondNode.data;
+           
            if (firstNode == null)
            {
                 return null;
@@ -175,13 +175,12 @@ namespace Datastructures
                 return null;
            }
 
-           if (firstNode == secondNode)
+           if (firstNodeData == secondNodeData)
            {
                 return null;
            }
 
-           int firstNodeData = firstNode.data;
-           int secondNodeData = secondNode.data;
+
            Node head1 = this.head;
            Node head2 = this.head;
 
@@ -195,10 +194,72 @@ namespace Datastructures
                head2 = head2.next;
            }
 
-           int val = head1.data;
+           int value = head1.data;
            head1.data = head2.data;
-           head2.data = val;
+           head2.data = value;
            return head1;
+        }
+
+        public void SwitchNode3(Node argFirstNode, Node argSecondNode) //another version to switch nodes
+        {
+            var cur = head;
+            while (cur.next != null)
+            {
+                if (cur.data == argFirstNode.data)
+                    cur.data = argSecondNode.data;
+                else if (cur.data == argSecondNode.data)
+                    cur.data = argFirstNode.data;
+                cur = cur.next;     
+            }
+            return;
+        }
+
+        public void insertionSort(Node headref)
+        {
+            // Initialize sorted linked list
+            sorted = null;
+            Node current = headref;
+
+            // Traverse the given 
+            // linked list and insert every
+            // node to sorted
+            while (current != null)
+            {
+                // Store next for next iteration
+                Node next = current.next;
+
+                // insert current in sorted linked list
+                sortedInsert(current);
+
+                // Update current
+                current = next;
+            }
+
+            // Update head_ref to point to sorted linked list
+            head = sorted;
+        }
+
+        void sortedInsert(Node newnode)
+        {
+            /* Special case for the head end */
+            if (sorted == null || sorted.data >= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+
+                /* Locate the node before the point of insertion */
+                while (current.next != null &&
+                        current.next.data < newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
         }
     }
 }
