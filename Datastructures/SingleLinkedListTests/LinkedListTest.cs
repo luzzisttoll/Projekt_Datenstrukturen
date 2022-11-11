@@ -61,5 +61,19 @@ namespace TestProject
             Assert.AreEqual(5, node1);
 
         }
+
+        [Test]
+        public void TestInsertionSort_InsertNumbers_ReturnRightOrder()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(6);
+            linkedList.insertLast(5);
+            linkedList.insertionSort(linkedList.head);
+            Assert.AreEqual(linkedList.head.data, 1);
+            Assert.AreEqual(linkedList.head.next.data, 5);
+            Assert.AreEqual(linkedList.head.next.next.data, 6);
+
+        }
     }
 }
