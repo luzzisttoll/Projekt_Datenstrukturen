@@ -9,7 +9,7 @@ namespace GenerischeKlassen
             Datastructures.SingleLinkedList linkedList = new Datastructures.SingleLinkedList();
             linkedList.insertLast(1);
             linkedList.insertLast(4);
-            linkedList.insertLast(3);
+            linkedList.insertLast(4);
             linkedList.insertLast(6);
             linkedList.insertLast(5);
             //linkedList.InsertAfter(9, 2);
