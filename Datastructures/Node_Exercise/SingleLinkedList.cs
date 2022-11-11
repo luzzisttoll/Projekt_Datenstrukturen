@@ -261,5 +261,53 @@ namespace Datastructures
                 current.next = newnode;
             }
         }
+
+
+        public void insertionSortInverse(Node headref)
+        {
+            // Initialize sorted linked list
+            sorted = null;
+            Node current = headref;
+
+            // Traverse the given 
+            // linked list and insert every
+            // node to sorted
+            while (current != null)
+            {
+                // Store next for next iteration
+                Node next = current.next;
+
+                // insert current in sorted linked list
+                invertedInsertionSort(current);
+
+                // Update current
+                current = next;
+            }
+
+            // Update head_ref to point to sorted linked list
+            head = sorted;
+        }
+        void invertedInsertionSort(Node newnode)
+        {
+            /* Special case for the head end */
+            if (sorted == null || sorted.data <= newnode.data)
+            {
+                newnode.next = sorted;
+                sorted = newnode;
+            }
+            else
+            {
+                Node current = sorted;
+
+                /* Locate the node before the point of insertion */
+                while (current.next != null &&
+                        current.next.data > newnode.data)
+                {
+                    current = current.next;
+                }
+                newnode.next = current.next;
+                current.next = newnode;
+            }
+        }
     }
 }

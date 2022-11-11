@@ -13,7 +13,7 @@ namespace TestProject
         {
         }
 
-        [Test]
+        //[Test]
         public void TestSLLCount_AddItems_ReturnCorrectCount()
         {
             var myLL = new SingleLinkedList();
@@ -24,7 +24,7 @@ namespace TestProject
             Assert.AreEqual(4, myLL.count());
         }
 
-        [Test]
+        //[Test]
         public void SingleLinkedListTest_DeleteItem_ReturnCorrectCount()
         {
             var linkedList = new SingleLinkedList();
@@ -35,7 +35,7 @@ namespace TestProject
             Assert.AreEqual(linkedList.count(), 1);
         }
 
-        [Test]
+        //[Test]
         public void SSLTest_NodeExists_ReturnsNode()
         {
             var linkedList = new SingleLinkedList();
@@ -48,7 +48,7 @@ namespace TestProject
             Assert.AreNotEqual(getnode, null);
         }
 
-        [Test]
+        //[Test]
         public void SSLTest_SwitchNodes_ReturnCorrectOrder()
         {
             var linkedList = new SingleLinkedList();
@@ -62,8 +62,8 @@ namespace TestProject
 
         }
 
-        [Test]
-        public void TestInsertionSort_InsertNumbers_ReturnRightOrder()
+        //[Test]
+        public void TestInsertionSort_InsertNumbers65_ReturnRightOrder()
         {
             var linkedList = new SingleLinkedList();
             linkedList.insertLast(1);
@@ -73,6 +73,20 @@ namespace TestProject
             Assert.AreEqual(linkedList.head.data, 1);
             Assert.AreEqual(linkedList.head.next.data, 5);
             Assert.AreEqual(linkedList.head.next.next.data, 6);
+
+        }
+
+        [Test]
+        public void TestInsertionSortInverse_InsertNumbers165_ReturnReverseOrder()
+        {
+            var linkedList = new SingleLinkedList();
+            linkedList.insertLast(1);
+            linkedList.insertLast(6);
+            linkedList.insertLast(5);
+            linkedList.insertionSortInverse(linkedList.head);
+            Assert.AreEqual(linkedList.head.data, 6);
+            Assert.AreEqual(linkedList.head.next.data, 5);
+            Assert.AreEqual(linkedList.head.next.next.data, 1);
 
         }
     }

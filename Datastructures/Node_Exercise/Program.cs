@@ -20,8 +20,10 @@ namespace GenerischeKlassen
             //linkedList.SwitchNode2(new Node(2, null), new Node(4, null));
             Console.WriteLine("Linked List before Sorting..");
             linkedList.printList();
-            Console.WriteLine("\nLinkedList After sorting");
-            linkedList.insertionSort(linkedList.head);
+            //Console.WriteLine("\nLinkedList After sorting");
+            //linkedList.insertionSort(linkedList.head);
+            Console.WriteLine("\nLinkedList After sorting reverse");
+            linkedList.insertionSortInverse(linkedList.head);
             linkedList.printList();
             //Console.WriteLine(linkedList.GetNode(4));
         }
