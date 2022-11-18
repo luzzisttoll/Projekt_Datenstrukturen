@@ -6,19 +6,6 @@ using System.Threading.Tasks;
 
 namespace Common
 {
-    public interface IMyList
-    {
-        void SwitchNode(int firstNode, int secondNode);
-        void SetSortStrategy(SortStrategy sortStrategy);
-        Node GetFirst();
-        void Sort();
-    }
-
-    public abstract class SortStrategy
-    {
-        public abstract void Sort(IMyList list);
-    }
-
     public class InsertionSort : SortStrategy
     {
         public override void Sort(IMyList list)
@@ -60,30 +47,6 @@ namespace Common
                 nextNode = nextNode.next;
             }
             Console.WriteLine("InsertionSorted list ");
-        }
-    }
-
-    public class BubbleSort : SortStrategy
-    {
-        public override void Sort(IMyList list)
-        {
-            bool sort = true;
-            while (sort)
-            {
-                sort = false;
-                Node currentNode = list.GetFirst();
-                Node currentNodeNext = list.GetFirst().next;
-                while (currentNodeNext != null)
-                {
-                    if (currentNode.data > currentNodeNext.data)
-                    {
-                        (currentNode.data, currentNodeNext.data) = (currentNodeNext.data, currentNode.data);
-                        sort = true;
-                    }
-                    currentNode = currentNode.next;
-                    currentNodeNext = currentNodeNext.next;
-                }
-            }
         }
     }
 }
