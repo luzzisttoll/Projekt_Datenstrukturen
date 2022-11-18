@@ -1,4 +1,5 @@
-﻿using Datastructures;
+﻿using Common;
+using Datastructures;
 using NUnit.Framework;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -63,41 +64,32 @@ namespace TestProject
         }
 
         [Test]
-        public void TestInsertionSort_InsertNumbers65_ReturnRightOrder()
+        public void TestStrategyPattern_InsertNumbers1665_ReturnRightOrder()
         {
             var linkedList = new SingleLinkedList();
+            linkedList.SetSortStrategy(new InsertionSort());
             linkedList.insertLast(1);
-            linkedList.insertLast(6);
+            linkedList.insertLast(8);
             linkedList.insertLast(5);
-            linkedList.insertionSort(linkedList.head);
+            linkedList.insertLast(6);
+            linkedList.Sort();
             Assert.AreEqual(linkedList.head.data, 1);
             Assert.AreEqual(linkedList.head.next.data, 5);
             Assert.AreEqual(linkedList.head.next.next.data, 6);
-
+            Assert.AreEqual(linkedList.head.next.next.next.data, 8);
         }
 
-        [Test]
-        public void TestInsertionSortInverse_InsertNumbers165_ReturnReverseOrder()
-        {
-            var linkedList = new SingleLinkedList();
-            linkedList.insertLast(1);
-            linkedList.insertLast(6);
-            linkedList.insertLast(5);
-            linkedList.insertionSortInverse(linkedList.head);
-            Assert.AreEqual(linkedList.head.data, 6);
-            Assert.AreEqual(linkedList.head.next.data, 5);
-            Assert.AreEqual(linkedList.head.next.next.data, 1);
-        }
 
         [Test]
         public void TestInsertionSortInverse_InsertSameNumbers1665_ReturnReverseOrder()
         {
             var linkedList = new SingleLinkedList();
+            linkedList.SetSortStrategy(new InsertionSortInverse());
             linkedList.insertLast(1);
             linkedList.insertLast(6);
             linkedList.insertLast(5);
             linkedList.insertLast(6);
-            linkedList.insertionSortInverse(linkedList.head);
+            linkedList.Sort();
             Assert.AreEqual(linkedList.head.data, 6);
             Assert.AreEqual(linkedList.head.next.data, 6);
             Assert.AreEqual(linkedList.head.next.next.data, 5);
