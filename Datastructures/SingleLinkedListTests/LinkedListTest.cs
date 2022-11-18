@@ -64,10 +64,10 @@ namespace TestProject
         }
 
         [Test]
-        public void TestStrategyPattern_InsertNumbers1665_ReturnRightOrder()
+        public void TestStrategyPatternBubbleSort_InsertNumbers1665_ReturnRightOrder()
         {
             var linkedList = new SingleLinkedList();
-            linkedList.SetSortStrategy(new InsertionSort());
+            linkedList.SetSortStrategy(new BubbleSort());
             linkedList.insertLast(1);
             linkedList.insertLast(8);
             linkedList.insertLast(5);
