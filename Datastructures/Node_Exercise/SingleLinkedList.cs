@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Common;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -6,12 +7,11 @@ using System.Threading.Tasks;
 
 namespace Datastructures
 {
-    public class SingleLinkedList
+    public class SingleLinkedList : IMyList
     {
         public Node head;
-        public Node tail;
-        public Node sorted;
         int _counter;
+        private SortStrategy _strategy;
 
         public void insertLast(int newElement)
         {
@@ -214,52 +214,19 @@ namespace Datastructures
             return;
         }
 
-        public void insertionSort(Node headref)
+        public void SetSortStrategy(SortStrategy sortStrategy)
         {
-            // Initialize sorted linked list
-            sorted = null;
-            Node current = headref;
-
-            // Traverse the given 
-            // linked list and insert every
-            // node to sorted
-            while (current != null)
-            {
-                // Store next for next iteration
-                Node next = current.next;
-
-                // insert current in sorted linked list
-                sortedInsert(current);
-
-                // Update current
-                current = next;
-            }
-
-            // Update head_ref to point to sorted linked list
-            head = sorted;
+            _strategy = sortStrategy;
         }
 
-        void sortedInsert(Node newnode)
+        public Node GetFirst()
         {
-            /* Special case for the head end */
-            if (sorted == null || sorted.data >= newnode.data)
-            {
-                newnode.next = sorted;
-                sorted = newnode;
-            }
-            else
-            {
-                Node current = sorted;
+            return head;
+        }
 
-                /* Locate the node before the point of insertion */
-                while (current.next != null &&
-                        current.next.data < newnode.data)
-                {
-                    current = current.next;
-                }
-                newnode.next = current.next;
-                current.next = newnode;
-            }
+        public void Sort()
+        {
+            _strategy.Sort(this);
         }
     }
 }
